@@ -9,7 +9,8 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to fetch result', undefined)
         } else {
-            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degree celcius and chance of rain is ' + body.currently.precipProbability + ' %.')
+            //console.log(body.daily.data[0])
+            callback(undefined, body.daily.data[0].summary + ' Today\'s max temperature is '+ body.daily.data[0].temperatureHigh + ' degree celcius with low of ' + body.daily.data[0].temperatureLow + ' degree celcius. It is currently ' + body.currently.temperature + ' degree celcius and chance of rain is ' + body.currently.precipProbability + ' %.')
         }
     })
 }
